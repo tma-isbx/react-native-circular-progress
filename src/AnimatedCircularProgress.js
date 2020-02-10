@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { Animated, Easing } from 'react-native';
 import CircularProgress from './CircularProgress';
 const AnimatedProgress = Animated.createAnimatedComponent(CircularProgress);
@@ -67,15 +66,6 @@ export default class AnimatedCircularProgress extends React.PureComponent {
     return <AnimatedProgress {...other} fill={this.state.fillAnimation} tintColor={this.animateColor()} />;
   }
 }
-
-AnimatedCircularProgress.propTypes = {
-  ...CircularProgress.propTypes,
-  prefill: PropTypes.number,
-  duration: PropTypes.number,
-  easing: PropTypes.func,
-  onAnimationComplete: PropTypes.func,
-  useNativeDriver: PropTypes.bool,
-};
 
 AnimatedCircularProgress.defaultProps = {
   duration: 500,
